@@ -33,6 +33,13 @@ document.getElementById('rabbit').onclick = function()
  	document.getElementById('p4').innerHTML="The fourth animal is: " +animal4.name+ ", "+ "color: "+ animal4.color+ ", "+"Number of legs:"+animal4.legs;
 }
 
+// Prototype Example
+Animal.prototype.getName = function(){
+  return this.name + ", " +"Color: " + this.color + ", "+ "Number of legs: " + this.legs;
+}
+
+var myAnimal = new Animal("Hippo", "Pale", 4);
+document.getElementById("prototype").innerHTML = "My name is " + myAnimal.getName(); 
 
 // closure example
 document.getElementById('closure').onclick = function(){
@@ -43,7 +50,7 @@ function getName() {
   var name = prompt('Enter your Name');
   function displayName() {
     alert('Hello '+name+', Welcome to this portal');
-    document.getElementById('p5').innerHTML="Name: " +name;
+    document.getElementById('p6').innerHTML="Name: " +name;
   }
   return displayName;
 }
